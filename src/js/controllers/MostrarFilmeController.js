@@ -1,6 +1,6 @@
 import {
-    HttpRequest
-} from '../services/HttpRequest.js'
+    RequisicaoGhibli
+} from '../services/RequisicaoGhibli.js'
 import {
     MostrarFilmeView
 } from '../views/MostrarFilmeView.js'
@@ -9,7 +9,7 @@ import {
 class MostrarFilmeController {
 
     static requisicao() {
-        HttpRequest.requisicaoGhibli()
+        RequisicaoGhibli.listarFilmes()
             .then(filmes => filmes.forEach(filme => MostrarFilmeView.criarElementos(
                 filme.title, filme.description, filme.director, filme.release_date, filme.rt_score)))
     }

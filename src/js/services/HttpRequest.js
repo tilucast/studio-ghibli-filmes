@@ -11,13 +11,4 @@ export class HttpRequest {
         })
     }
 
-    static async requisicaoGhibli() {
-        try {
-            const filmes = await this.get('https://ghibliapi.herokuapp.com/films')
-            return filmes
-        } catch (err) {
-            console.log(err)
-            throw new Error('Erro ao realizar a requisição à API.')
-        }
-    }
 }
