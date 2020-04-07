@@ -21,12 +21,7 @@ export class MostrarFilmeView {
         const pScore = document.createElement('p')
         pScore.classList.add('rt-score')
 
-        divFilm.appendChild(divFilmTitle)
-        divFilm.appendChild(h2FilmTitle)
-        divFilm.appendChild(pDescription)
-        divFilm.appendChild(h3Director)
-        divFilm.appendChild(pRelease)
-        divFilm.appendChild(pScore)
+        divFilm.append(divFilmTitle, h2FilmTitle, pDescription, h3Director, pRelease, pScore)
 
         sectionFilmes.appendChild(divFilm)
 
