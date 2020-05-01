@@ -9,7 +9,7 @@ Esta é a API consumida nesse código. Para maiores informações, leia a docume
 
 # Sobre o projeto
 
-É um projeto muito simples, aonde eu consumo uma API igualmente simples. O intuito desse projeto foi treinar fetch, Promises, e async/await, e treinar a sintaxe da orientação à objetos no javascript.
+É um projeto muito simples, onde eu consumo uma API igualmente simples. O intuito desse projeto foi treinar fetch, Promises, e async/await, e treinar a sintaxe da orientação à objetos no javascript.
 
 Um adendo : Eu ainda estou aprendendo sobre MVC, é um conceito complexo, que pode ser feitos de **n** maneiras diferentes dependendo do projeto. Ignore a falta de sentido do ''MVC'' feito aqui.
 
