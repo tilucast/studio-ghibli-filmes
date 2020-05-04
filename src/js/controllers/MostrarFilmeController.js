@@ -8,10 +8,16 @@ import {
 
 class MostrarFilmeController {
 
-    static requisicao() {
-        RequisicaoGhibli.listarFilmes()
-            .then(filmes => filmes.forEach(filme => MostrarFilmeView.criarElementos(
-                filme.title, filme.description, filme.director, filme.release_date, filme.rt_score)))
+    static async requisicao() {
+
+        try{
+            const result = await RequisicaoGhibli.listarFilmes()
+            return result.forEach(film => MostrarFilmeView.criarElementos(film.title, film.description, 
+                film.director, film.release_date, film.rt_score))
+        }catch(err){
+            console.log(err)
+            throw new Error(err)
+        }
     }
 
 }

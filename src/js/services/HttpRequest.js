@@ -3,12 +3,15 @@ export class HttpRequest {
         throw new Error(`HttpRequest is static.`)
     }
 
-    static get(url) {
-        let Fetch = fetch(url)
-        return new Promise((resolve, reject) => {
-            resolve(Fetch.then(data => data.json()))
-            reject(Fetch.catch(err => console.log(err)))
-        })
+    static async get(url) {
+
+        try{
+            const result = await fetch(url)
+            return result.json()
+        }catch(err){
+            console.log(err)
+            throw new Error(err)
+        }
     }
 
 }
