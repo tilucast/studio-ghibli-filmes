@@ -1,36 +1,21 @@
 export class MostrarFilmeView {
 
-    static criarElementos(title, description, director, release, score) {
-        const sectionFilmes = document.querySelector('.films')
+    static criarElementos(films) {
 
-        const divFilm = document.createElement('div')
-        divFilm.classList.add('film')
+        const divFilmes = document.querySelector(".films")
 
-        const divFilmTitle = document.createElement('div')
-        divFilmTitle.classList.add('film-title')
-        const h2FilmTitle = document.createElement('h2')
+        return divFilmes.innerHTML = films.map(({title, description, director, release_date, rt_score}) => `
+            <div class="film">
+                <div class="film-title">
+                    <h2>${title}</h2>
+                </div>
 
-        const pDescription = document.createElement('p')
-        pDescription.classList.add('description')
+                <p class="description">${description}</p>
 
-        const h3Director = document.createElement('h3')
-
-        const pRelease = document.createElement('p')
-        pRelease.classList.add('release-date')
-
-        const pScore = document.createElement('p')
-        pScore.classList.add('rt-score')
-
-        divFilm.append(divFilmTitle, h2FilmTitle, pDescription, h3Director, pRelease, pScore)
-
-        sectionFilmes.appendChild(divFilm)
-
-        divFilmTitle.appendChild(h2FilmTitle)
-
-        h2FilmTitle.innerHTML = title
-        pDescription.innerHTML = description
-        h3Director.innerHTML = `Director: ${director}`
-        pRelease.innerHTML = `Release Date: ${release}`
-        pScore.innerHTML = `Rotten Tomatoes: ${score}`
+                <h3>Director: ${director}</h3>
+                <p class="release-date">Release Date: ${release_date}</p>
+                <p class="rt-score">Rotten Tomatoes: ${rt_score}</p>
+            </div>
+        `).join('')
     }
 }
